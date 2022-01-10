@@ -1,4 +1,6 @@
-﻿namespace SampleProject.Models
+﻿using System;
+
+namespace SampleProject.Models
 {
     public class Product
     {

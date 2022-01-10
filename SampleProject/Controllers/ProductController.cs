@@ -3,41 +3,22 @@ using SampleProject.Models;
 
 namespace SampleProject.Controllers
 {
+    #region [NonController]
+    //Böyle yaparsak bütün controller'ı sadece iş mantığında kullanmış olacağız. İşlevselliğini kaybedip normal bir sınıf gibi olacak ve request alamayacaktır.
+    #endregion
     public class ProductController : Controller
     {
-        #region ViewResult
-        //public IActionResult GetProducts()
-        //{
-        //    ViewResult result = View();
-        //    return View();
-        //}
+        public IActionResult Index()
+        {
+            return View();
+        }
+        #region [NonAction] 
+        //Aşağıdaki örnek olarak verdiğimiz X metodunu Action olarak kullanmayacaksak sadece bir iş mantığı yürüten operasyonel fonksiyon ise NonAction olduğunu belirtmeliyiz. Böyle işaretlenen metotlar dışarıdan request karşılamazlar. Bunu MVC tabanında yapılan uygulamalarda(Web gibi) çok da iyi değildir. Başka bir sınıftan çağırmak daha iyidir.
         #endregion
-        #region PartialViewResult
-        //Yine bir View dosyasını(.cshtml) render etmemizi sağlayan bir action türüdür. ViewResult'tan temel farkı,client tabanlı yapılan Ajax isteklerinde kullanıma yatkın olmasıdır. Client tabanlı isteklerde bunu kullanmak daha doğrudur. Teknik fark ise ViewResult _ViewStart.cshtml dosyasını baz alır. Lakin PartialViewResult ise ilgili dosyayı baz almadan render edilir. Bir internet sayfası üzerinden örnek verecek olursak, sayfanın tamamı yerine, belli bir parçasını render etmek istiyorsak PartialView kullanırız.
+        public void X()
+        {
 
-        //public PartialViewResult GetProducts()
-        //{
-        //    PartialViewResult result = PartialView();
-        //    return result;
-        //}
-        #endregion
-        #region JsonResult
-        //Üretilen datayı JSON türüne dönüştürüp döndüren bir action türüdür.
-        //public JsonResult GetProducts()
-        //{
-        //    JsonResult result = Json(new Product
-        //    {
-        //        Id = 5,
-        //        ProductName = "Terlik",
-        //        Quantity = 15
-        //    });
-        //    return result;
-        //}
-        #endregion
-        #region EmptyResult
-        //Bazen gelen istekler neticesinde herhangi bir şey döndürmek istemeyebiliriz. Böyle bir durumda EmptyResult action türü kullanılabilir.
-
-        #endregion
+        }
 
     }
 }
