@@ -1,0 +1,51 @@
+_____HELPERS_____
+
+---UrlHelper---
+
+Asp.NET Core MVC uygulamalarýnda url oluþturmak için yardýmcý metotlar içeren ve o anki url'e dair bizlere bilgi veren bir sýnýftýr.
+Metotlar:Action,ActionLink,Content,RouteUrl
+Properties:ActionContext
+
+Action Metodu: Verilen Controller ve Action'a ait url oluþturmayý saðlayan metottur.
+ÖRN: Url.Action("index", "product", new { id = 5 })
+Sonuc: /product/index/5
+
+ActionLink Metodu:Verilen Controller ve Action'a ait url oluþturmayý saðlayan metottur. Action'dan farký host bilgisini de taþýmaktýr.
+ÖRN: Url.ActionLink("index", "product", new { id = 5 })
+Sonuc: https://localhost:5001/product/index/5
+
+Content Metodu: Genellikle CSS ve Script gibi dosya dizinlerini programatik olarak tarif etmek için kullanmaktayýz. Çok da kullandýðýmýz bir metot deðil. UseStaticFiles middleware'ý ile gelen static dosya yapýlanmasý bu metodun iþlevselliðini daha efektif üstlenmektedir.
+Örn: Url.Content("~/site.css")
+Sonuc: /site.css
+
+RotureUrl Metodu: Mimaride tanýmlý olan Route isimlerine uygun bir þekilde url oluþturan bir metottur.
+Örn: Url.RouteUrl("Default")
+Sonuc: /Product/GetProducts
+
+ActionContext Property: O anki url'e dair tüm bilgilere eriþebilmemizi saðlayan bir property'dir.
+
+---HtmlHelpers---
+-Html etiketlerini server tabanlý oluþturmamýzý saðlayan yardýmcý metotlarý barýndýrmakta. Ama server'a yük bindiriyor.Yardýmdan ziyade bize daha pahalýya mal oluyor. Çok tavsiye edilmez.
+-Hedeflenen .cshtml dosyalarýný render etmemizi saðlamakta.
+-O anki context'e dair bilgiler edinmemizi saðlamakta.
+-Veri taþýma kontrollerine eriþmemizi saðlamaktadýr.
+
+Metotlar: Html.Partial, Html.RenderPartial, Html.ActionLink, Html Form Metotlarý
+Properties: ViewContext, TempData, ViewData, ViewBag
+
+Html.Partial Metodu: Hedef View'i render etmemizi saðlayan bir fonksiyondur.
+Örn: <div style="border-top-color:ActiveBorder">
+		@Html.Partial("~/Views/Product/Index.cshtml")
+	 </div>
+Sonuc:Render edilen view'e ilgili action'dan model/data gönderilebilmektedir.
+
+Html.RenderPartial Metodu: Hedef View'i render etmemizi saðlayan bir fonksiyondur. Html.Partial'dan farký diðeri direk çaðýrýlabilirken bu scope içinde çaðýrýlmak zorunda. Bunun da sebebi partial geriye string döndürürken RenderPartial void döndürüyor.
+Html.RenderPartial sayfanýn TextWriter'ýný kullandýðý için(yani Http response stream'e yazýldýðý için) Html.Partial'a nazaran daha hýzlý render iþlemini yürütür. Dolayýsýyla daha performanslýdýr.
+Orn:<div style = "border-top-color:ActiveBorder">
+		@{Html.RenderPartial("~/Views/Product/Index.cshtml")}
+	</div>
+
+Html.ActionLink Metodu: Url oluþturur.
+Örn:@Html.ActionLink("Anasayfa","Index","Home")
+
+Html Form Metotlarý: Asp.NET Core ile gelen TagHelper yapýlanmalarý HtmlHelper'a nazaran daha hýzlý daha efektif sonuçlar getirdiði için artýk onlarý tercih etmekteyiz.
