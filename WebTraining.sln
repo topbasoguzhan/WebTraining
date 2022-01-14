@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TheoreticalKnowledge", "The
 		ActionTypes.cs = ActionTypes.cs
 		MVC.cs = MVC.cs
 		Notes.cs = Notes.cs
+		WhatIsRazor.cs = WhatIsRazor.cs
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleProject", "SampleProject\SampleProject.csproj", "{D49EC680-938F-4612-9701-3DBAFEC3E246}"
