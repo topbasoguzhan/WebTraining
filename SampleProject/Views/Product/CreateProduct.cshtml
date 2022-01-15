@@ -2,25 +2,44 @@
 
 @model SampleProject.Models.Product
 
-<form action="CreateProduct" method="post">@*Controller'ı belirtmezsek View bulunduğu Controller'ı baz alır.*@
+<form asp-action ="VeriAl" asp-controller ="Product" method="post">
+    <input asp-for="ProductName" type ="text"/> <br />
+    <input asp-for="Quantity" type ="text"/> <br />
+    <button>Gönder</button>    
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+@*Model Bindings Views*@@*@model SampleProject.Models.Product
+
+<form action="CreateProduct" method="post">Controller'ı belirtmezsek View bulunduğu Controller'ı baz alır.
     <input type ="text" asp-for="ProductName" placeholder="Product Name" />
-    @*@Html.TextBoxFor(x => x.ProductName, "", new {
+    @Html.TextBoxFor(x => x.ProductName, "", new {
         placeholder = "Product Name"
     }) 
-    üstündeki taghelper'ın HtmlHelper hali*@
+    üstündeki taghelper'ın HtmlHelper hali
     <br />
     <input type="number" asp-for="Quantity" placeholder="Quantity" />
-    @*@Html.TextBoxFor(x => x.Quantity, "", new {
+    @Html.TextBoxFor(x => x.Quantity, "", new {
         placeholder = "Quantity"
         type = "number"
     }) 
-    üstündeki taghelper'ın HtmlHelper hali*@    <br />
-    @*Bir form nesnesini tetikleyebilmemiz için ilgili formun içerisinde bir tane button nesnesi olması gerekiyor.*@
+    üstündeki taghelper'ın HtmlHelper hali    <br />
+    Bir form nesnesini tetikleyebilmemiz için ilgili formun içerisinde bir tane button nesnesi olması gerekiyor.
     <button>Ürün Ekle</button>
 </form>
-@*Bir web uygulamasında form tetiklendiğinde içindeki inputların değerleri hedef endpoint'e gönderilir.
-Post olarak gönderilir burada mesela*@
-@*Form içerisindeki input nesneleri post edildiğinde ,bu nesnelere karşılık gelen propertyleri barından
+Bir web uygulamasında form tetiklendiğinde içindeki inputların değerleri hedef endpoint'e gönderilir.
+Post olarak gönderilir burada mesela
+Form içerisindeki input nesneleri post edildiğinde ,bu nesnelere karşılık gelen propertyleri barından
 bir nesneyle otomatik olarak bind edilirler.*@
 
 

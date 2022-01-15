@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SampleProject.Models;
 using SampleProject.Models.ViewModels;
 using System.Collections.Generic;
@@ -11,24 +12,19 @@ namespace SampleProject.Controllers
     #endregion
     public class ProductController : Controller
     {
+        public class Model
+        {
+            public string txtValue1 { get; set; }
+            public string txtValue2 { get; set; }
+            public string txtValue3 { get; set; }
+
+        }
         public IActionResult GetProducts()
         {
             return View();
         }
         
-        public IActionResult CreateProduct() //CreateProduct'a get isteği gelirse bunu tetikleyecek
-        {
-            var product = new Product()
-            {
-                ProductName = "DefaultName",
-                Quantity = 25
-            };
-            return View(product);
-        }
-
-        [HttpPost]
-        public IActionResult CreateProduct(Product product)
-        //public IActionResult CreateProduct(string txtProductName, string txtQuantity /*Request neticesinde gelen dataların hepsi Action fonksiyonlarda parametrelerden yakalanmaktadır.*/)//Post isteği gelirse bunu tetikleyecektir.
+        public IActionResult CreateProduct()
         {
             return View();
         }
@@ -121,6 +117,32 @@ namespace SampleProject.Controllers
     {
         LastName = "TOPBAŞ" //Burdan gönderildi model bazlı mesela(açıklama devamı orada)
     };
+}*/
+#endregion
+#region ModelBinding Denemesi
+/*public IActionResult CreateProduct() //CreateProduct'a get isteği gelirse bunu tetikleyecek
+{
+    var product = new Product()
+    {
+        ProductName = "DefaultName",
+        Quantity = 25
+    };
+    return View(product);
+}
+
+[HttpPost]
+public IActionResult CreateProduct(Product product)
+//public IActionResult CreateProduct(string txtProductName, string txtQuantity /*Request neticesinde gelen dataların hepsi Action fonksiyonlarda parametrelerden yakalanmaktadır.)*///Post isteği gelirse bunu tetikleyecektir.
+#endregion
+#region Methods of getting data from user with form
+/*public IActionResult VeriAl(Model model)
+public IActionResult VeriAl(Product model)
+public IActionResult VeriAl(string txtValue1, string txtValue2, string txtValue3)
+public IActionResult VeriAl(IFormCollection datas)
+{
+    //var value1 = datas["txtValue1"].ToString();
+    //var value2 = datas["txtValue2"].ToString();
+    //var value3 = datas["txtValue3"]; //ToString'ler string olarak değerleri yakalayabilmek için.
 }*/
 #endregion
 

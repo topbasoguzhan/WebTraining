@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TheoreticalKnowledge", "The
 	ProjectSection(SolutionItems) = preProject
 		ActionTypes.cs = ActionTypes.cs
 		Helpers.txt = Helpers.txt
+		MethodsOfGetDataFromUser.txt = MethodsOfGetDataFromUser.txt
 		MVC.cs = MVC.cs
 		Notes.cs = Notes.cs
 		WhatIsRazor.cs = WhatIsRazor.cs

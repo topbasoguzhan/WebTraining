@@ -1,0 +1,4 @@
+____KULLANICIDAN VERÝ ALMA YÖNTEMLERÝ____
+
+---Form Üzerinden Veri Alma---
+Kullanýcýnýn veri girebileceði sayfayý Html'in bize saðladýðý form üzerinde tasarlarýz. Post ve Get olarak iki türlü þekilde veri alabiliyoruz.
