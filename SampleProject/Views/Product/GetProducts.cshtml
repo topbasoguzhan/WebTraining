@@ -1,9 +1,11 @@
 ﻿@addTagHelper * ,Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper * ,SampleProject
 
+<a href="mailto:manifestationoffate@gmail.com">Email</a>
+<br />
+<email a="abc" mail="manifestationoffate@gmail.com" display="Oğuzhan Topbaş Mail'i"></email>
 
-
-
-@*<cache>
+@*TagHelpers*@@*<cache>
     Cache : @DateTime.Now *CacheTagHelper
 </cache>
 <br />
@@ -18,7 +20,6 @@
 
 
 </form> *FormTaghelper ile*@
-
 @*uygulama*@@* @model SampleProject.Models.ViewModels.UserProduct
 
 <h3>@Model.Product.ProductName</h3>
