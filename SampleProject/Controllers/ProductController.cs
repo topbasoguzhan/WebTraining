@@ -12,13 +12,6 @@ namespace SampleProject.Controllers
     #endregion
     public class ProductController : Controller
     {
-        public class Model
-        {
-            public string txtValue1 { get; set; }
-            public string txtValue2 { get; set; }
-            public string txtValue3 { get; set; }
-
-        }
         public IActionResult GetProducts()
         {
             return View();
@@ -26,6 +19,11 @@ namespace SampleProject.Controllers
         
         public IActionResult CreateProduct()
         {
+            return View();
+        }
+        public IActionResult VeriAl()
+        {
+           
             return View();
         }
     }
@@ -135,7 +133,14 @@ public IActionResult CreateProduct(Product product)
 //public IActionResult CreateProduct(string txtProductName, string txtQuantity /*Request neticesinde gelen dataların hepsi Action fonksiyonlarda parametrelerden yakalanmaktadır.)*///Post isteği gelirse bunu tetikleyecektir.
 #endregion
 #region Methods of getting data from user with form
-/*public IActionResult VeriAl(Model model)
+/*public class Model
+        {
+            public string txtValue1 { get; set; }
+            public string txtValue2 { get; set; }
+            public string txtValue3 { get; set; }
+
+        }
+public IActionResult VeriAl(Model model)
 public IActionResult VeriAl(Product model)
 public IActionResult VeriAl(string txtValue1, string txtValue2, string txtValue3)
 public IActionResult VeriAl(IFormCollection datas)
@@ -145,4 +150,13 @@ public IActionResult VeriAl(IFormCollection datas)
     //var value3 = datas["txtValue3"]; //ToString'ler string olarak değerleri yakalayabilmek için.
 }*/
 #endregion
-
+#region Get Data with QueryString
+/*public IActionResult VeriAl(string a, string b)
+public IActionResult VeriAl()
+{
+    var queryString = Request.QueryString; //Request yapılan enpoint'e query string parametresi eklemeli mi eklenmemeli mi bununla ilgili bilgi verir.
+    var a = Request.Query["a"].ToString();
+    var b = Request.Query["b"].ToString();
+    return View();
+}*/
+#endregion

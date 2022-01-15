@@ -2,3 +2,6 @@ ____KULLANICIDAN VERÝ ALMA YÖNTEMLERÝ____
 
 ---Form Üzerinden Veri Alma---
 Kullanýcýnýn veri girebileceði sayfayý Html'in bize saðladýðý form üzerinde tasarlarýz. Post ve Get olarak iki türlü þekilde veri alabiliyoruz.
+---Query String---
+-Güvenlik gerektirmeyen bilgilerin Url üzerinde taþýnmasý için kullanýlan yapýlanmadýr.
+-Yapýlan requestin türü her ne olursa olsun query string deðerleri taþýnabilir.
