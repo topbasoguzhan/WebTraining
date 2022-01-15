@@ -1,0 +1,27 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model SampleProject.Models.Product
+
+<form action="CreateProduct" method="post">@*Controller'ı belirtmezsek View bulunduğu Controller'ı baz alır.*@
+    <input type ="text" asp-for="ProductName" placeholder="Product Name" />
+    @*@Html.TextBoxFor(x => x.ProductName, "", new {
+        placeholder = "Product Name"
+    }) 
+    üstündeki taghelper'ın HtmlHelper hali*@
+    <br />
+    <input type="number" asp-for="Quantity" placeholder="Quantity" />
+    @*@Html.TextBoxFor(x => x.Quantity, "", new {
+        placeholder = "Quantity"
+        type = "number"
+    }) 
+    üstündeki taghelper'ın HtmlHelper hali*@    <br />
+    @*Bir form nesnesini tetikleyebilmemiz için ilgili formun içerisinde bir tane button nesnesi olması gerekiyor.*@
+    <button>Ürün Ekle</button>
+</form>
+@*Bir web uygulamasında form tetiklendiğinde içindeki inputların değerleri hedef endpoint'e gönderilir.
+Post olarak gönderilir burada mesela*@
+@*Form içerisindeki input nesneleri post edildiğinde ,bu nesnelere karşılık gelen propertyleri barından
+bir nesneyle otomatik olarak bind edilirler.*@
+
+
+

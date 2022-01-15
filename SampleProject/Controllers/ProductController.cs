@@ -11,95 +11,116 @@ namespace SampleProject.Controllers
     #endregion
     public class ProductController : Controller
     {
-        #region ProductDenemesi
-        //public IActionResult Index()
-        //{
-        //    var products = new List<Product>
-        //    {
-        //        new Product { Id = 1, ProductName = "A Product", Quantity = 10},
-        //        new Product { Id = 2, ProductName = "B Product", Quantity = 15},
-        //        new Product { Id = 3, ProductName = "C Product", Quantity = 20},
-
-        //    };
-        #endregion
-        #region Model Bazlı Veri Gönderimi
-        //return View(); kullanarak model bazlı veri gönderimini kullanabiliriz. Yalnız bunu kullanırken .cshtml dosyasında da yapmamız gereken bir ayar var onu orada açıkladım. (Products.Index)
-        //return View(products); //direk göndermek istediğimiz modeli de belirtebiliriz.
-        #endregion
-        #region Veri Taşıma Kontrolleri
-        #region TempData
-        //ViewData'da olduğu gibi actiondaki datayı view'e taşımamızı sağlayan bir kontroldür. Farkı ise bir actionda elde edilen dataları farklı bir action'a göndermek istiyorsak burada TempData'yı kullanabiliriz,diğerleriyle bu işlemi gerçekleştiremeyiz.
-        //string data = JsonSerializer.Serialize(products);
-        //TempData["products"] = data;
-
-        //TempData["x"] = 5;
-        //ViewBag.x = 5;
-        //ViewData["x"] = 5;
-
-        //return RedirectToAction("Index2" , "Product");
-        #endregion
-        #region ViewBag
-        //View'e gönderilecek/taşınacak datayı dynamic şekilde tanımlanan bir değişkenle taşımamızı sağlayan bir veri taşıma kontrolüdür.
-        //ViewBag.products = products;
-        #endregion
-        #region ViewData
-        //ViewBag'de olduğu gibi actiondaki datayı view'e taşımamızı sağlayan bir kontroldür. ViewData datayı boxing ederek taşır. Haliyle bunu view'de unboxing etmeliyiz. 'as' diyip devamında yazdıklarımızla unboxing ediyoruz zaten
-        //ViewData["products"] = products;
-        #endregion
-        #endregion
-        #region Uygulama
-        //public IActionResult Index2()
-        //{
-        //    //var v1 = ViewBag.x;
-        //    //var v2 = ViewData["x"];
-        //    //var v3 = TempData["x"];
-
-        //    var data = TempData["products"].ToString();
-        //    List<Product> products = JsonSerializer.Deserialize<List<Product>>(data);
-
-        //    return View();
-        //}
-
-        //public IActionResult GetProducts()
-        //{
-        //    Product product = new Product()
-        //    {
-        //        Id = 1,
-        //        ProductName = "A Product",
-        //        Quantity = 15,
-        //    };
-
-        //    User user = new User()
-        //    {
-        //        Id = 1,
-        //        Name = "Gençay",
-        //        LastName = "Yıldız"
-        //    };
-
-        //    //UserProduct userProduct = new UserProduct()
-        //    //{
-        //    //    User = user,
-        //    //    Product = product,
-        //    //};
-
-        //    //return View(userProduct);
-
-        //    var userProduct = (product, user);
-
-        //    return View(userProduct);
-        //}
-        #endregion
         public IActionResult GetProducts()
         {
-            ViewBag.Message = "Merhaba";
-            User u = new User
+            return View();
+        }
+        
+        public IActionResult CreateProduct() //CreateProduct'a get isteği gelirse bunu tetikleyecek
+        {
+            var product = new Product()
             {
-                LastName = "TOPBAŞ" //Burdan gönderildi model bazlı mesela(açıklama devamı orada)
+                ProductName = "DefaultName",
+                Quantity = 25
             };
+            return View(product);
+        }
 
+        [HttpPost]
+        public IActionResult CreateProduct(Product product)
+        //public IActionResult CreateProduct(string txtProductName, string txtQuantity /*Request neticesinde gelen dataların hepsi Action fonksiyonlarda parametrelerden yakalanmaktadır.*/)//Post isteği gelirse bunu tetikleyecektir.
+        {
             return View();
         }
     }
-    
 }
+
+#region ProductDenemesi
+//public IActionResult Index()
+//{
+//    var products = new List<Product>
+//    {
+//        new Product { Id = 1, ProductName = "A Product", Quantity = 10},
+//        new Product { Id = 2, ProductName = "B Product", Quantity = 15},
+//        new Product { Id = 3, ProductName = "C Product", Quantity = 20},
+
+//    };
+#endregion
+#region Model Bazlı Veri Gönderimi
+//return View(); kullanarak model bazlı veri gönderimini kullanabiliriz. Yalnız bunu kullanırken .cshtml dosyasında da yapmamız gereken bir ayar var onu orada açıkladım. (Products.Index)
+//return View(products); //direk göndermek istediğimiz modeli de belirtebiliriz.
+#endregion
+#region Veri Taşıma Kontrolleri
+#region TempData
+//ViewData'da olduğu gibi actiondaki datayı view'e taşımamızı sağlayan bir kontroldür. Farkı ise bir actionda elde edilen dataları farklı bir action'a göndermek istiyorsak burada TempData'yı kullanabiliriz,diğerleriyle bu işlemi gerçekleştiremeyiz.
+//string data = JsonSerializer.Serialize(products);
+//TempData["products"] = data;
+
+//TempData["x"] = 5;
+//ViewBag.x = 5;
+//ViewData["x"] = 5;
+
+//return RedirectToAction("Index2" , "Product");
+#endregion
+#region ViewBag
+//View'e gönderilecek/taşınacak datayı dynamic şekilde tanımlanan bir değişkenle taşımamızı sağlayan bir veri taşıma kontrolüdür.
+//ViewBag.products = products;
+#endregion
+#region ViewData
+//ViewBag'de olduğu gibi actiondaki datayı view'e taşımamızı sağlayan bir kontroldür. ViewData datayı boxing ederek taşır. Haliyle bunu view'de unboxing etmeliyiz. 'as' diyip devamında yazdıklarımızla unboxing ediyoruz zaten
+//ViewData["products"] = products;
+#endregion
+#endregion
+#region Uygulama
+//public IActionResult Index2()
+//{
+//    //var v1 = ViewBag.x;
+//    //var v2 = ViewData["x"];
+//    //var v3 = TempData["x"];
+
+//    var data = TempData["products"].ToString();
+//    List<Product> products = JsonSerializer.Deserialize<List<Product>>(data);
+
+//    return View();
+//}
+
+//public IActionResult GetProducts()
+//{
+//    Product product = new Product()
+//    {
+//        Id = 1,
+//        ProductName = "A Product",
+//        Quantity = 15,
+//    };
+
+//    User user = new User()
+//    {
+//        Id = 1,
+//        Name = "Gençay",
+//        LastName = "Yıldız"
+//    };
+
+//    //UserProduct userProduct = new UserProduct()
+//    //{
+//    //    User = user,
+//    //    Product = product,
+//    //};
+
+//    //return View(userProduct);
+
+//    var userProduct = (product, user);
+
+//    return View(userProduct);
+//}
+#endregion
+#region Partial Deneme
+/*public IActionResult GetProducts()
+{
+    ViewBag.Message = "Merhaba";
+    User u = new User
+    {
+        LastName = "TOPBAŞ" //Burdan gönderildi model bazlı mesela(açıklama devamı orada)
+    };
+}*/
+#endregion
 
