@@ -1,4 +1,25 @@
-﻿@* @model SampleProject.Models.ViewModels.UserProduct
+﻿@addTagHelper * ,Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+
+
+@*<cache>
+    Cache : @DateTime.Now *CacheTagHelper
+</cache>
+<br />
+@DateTime.Now*@
+
+@*@Html.BeginForm("Index","Product",FormMethod.Post) *HtmlHelper ile
+
+<form asp-action="Index" asp-controller="Product" method="post">
+
+    @Html.TextBox("txtAdi")
+    <input type="text"/> *InputTagHelper
+
+
+</form> *FormTaghelper ile*@
+
+@*uygulama*@@* @model SampleProject.Models.ViewModels.UserProduct
 
 <h3>@Model.Product.ProductName</h3>
 <h3>@Model.User.Name</h3> *@
@@ -8,10 +29,14 @@
 <h3>@Model.p.ProductName</h3>
 <h3>@Model.u.Name</h3>*@
 
-@{
+@*@{
     ViewData["Title"] = "GetProducts";
 }
 <h1>GetProducts</h1>
 
-@Html.Partial("~/Views/Product/Partials/ListPartial.cshtml",new SampleProject.Models.Product())
+@Html.Partial("~/Views/Product/Partials/ListPartial.cshtml",new SampleProject.Models.Product())*@
 @*Gönderdiğimiz user'ı burada kullanabiliriz ve sondaki model'i bildirmeden partial'da da kullanabiliriz. Devamı orada(ListPartial) *@
+@*HtmlHelper deneme*@@*@Html.TextBox("txtAdi", null, new { style="background-color:green; color:white" })
+
+@Html.CustomTextBox("txtCustomAdi",null,"Adınız")*@
+

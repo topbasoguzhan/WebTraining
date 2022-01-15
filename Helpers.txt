@@ -49,3 +49,19 @@ Html.ActionLink Metodu: Url oluþturur.
 Örn:@Html.ActionLink("Anasayfa","Index","Home")
 
 Html Form Metotlarý: Asp.NET Core ile gelen TagHelper yapýlanmalarý HtmlHelper'a nazaran daha hýzlý daha efektif sonuçlar getirdiði için artýk onlarý tercih etmekteyiz.
+
+---TagHelpers---
+-Tag Helpers,daha okunabilir anlaþýlabilir ve kolay geliþtirebilir bir view inþa etmemizi saðlayan,Asp.NET Core ile birlikte HtmlHelpers'larýn yerine gelen yapýlardýr.
+-TagHelper'lar view'lerdeki kod maliyetini oldukça düþürmektedirler.
+-HtmlHelpers'larýn html nesnelerinin generate edilmesini server'a yüklemesinin getirdiði maliyeti de ortadan kaldýrmaktadýr.
+-HtmlHelpers'lardaki programatik yapýlanma,programlama bilmeyen tasarýmcýlarýn çalýþmasýný imkansýz hale getirmekteydi.TagHelpers'lar ile buradaki kusur giderildi.
+
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers diyerek bütün TagHelpers sýnýflarýmýzý kullanmak istediðimizi entegra ediyoruz .cshmtl dosyasýnýn içinde. Ama belli bir sýnýfý kullanmak istiyorsak belirtmemiz gerekiyor bunu.
+-Form TagHelper:<form asp-action="Index" asp-controller="Product" method="post"></form>
+-Input TagHelper: <input type="text"/>
+-Cache TagHelper: <cache>
+					Cache : @DateTime.Now *CacheTagHelper
+				 </cache>
+-Image TagHelper: Asp.NET Core MVC mimarisinde TagHelper'lar içerisinde static dosyalara ETag yöntemini uygulayabilir ve dosyanýn adý deðiþmese de içeriði deðiþtiði takdirde ETag üzerinden bu deðiþikliði fark ederek ilgili dosyanýn talep edileceði bilinebilmektedir.
+<img src="~/resim.png" asp-append-version="true" />
+-Partial TagHelper: <partial name ="~/Views/Product/Partials/ListPartial.cshtml" />
