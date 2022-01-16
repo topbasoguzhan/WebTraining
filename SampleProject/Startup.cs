@@ -28,6 +28,7 @@ namespace SampleProject
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("CustomRoute", "{controller=Home}/{action=Index}/{a}/{b}/{id}");//buradaki rotayý belirtirken deðerlerin isimlerinin sýralamasý önemli fakat controller'unda deðil.
                 //endpoints.MapGet("/", async context =>
                 //{
                 //    await context.Response.WriteAsync("Hello World!");

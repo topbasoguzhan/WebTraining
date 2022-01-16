@@ -10,8 +10,21 @@ namespace SampleProject.Controllers
     #region [NonController]
     //Böyle yaparsak bütün controller'ı sadece iş mantığında kullanmış olacağız. İşlevselliğini kaybedip normal bir sınıf gibi olacak ve request alamayacaktır.
     #endregion
+
+    public class QueryData
+    {
+        public int A { get; set; }
+        public string B { get; set; }
+    }
+    public class RouteData
+    {
+        public int A { get; set; }
+        public string B { get; set; }
+        public string Id { get; set; }
+    }
     public class ProductController : Controller
     {
+
         public IActionResult GetProducts()
         {
             return View();
@@ -21,9 +34,12 @@ namespace SampleProject.Controllers
         {
             return View();
         }
-        public IActionResult VeriAl()
+
+        //public IActionResult VeriAl(string id, string a, string b)
+        public IActionResult VeriAl(RouteData datas)
+
         {
-           
+            var values = Request.RouteValues; //rota değerlerini göbilmek için yazdık.
             return View();
         }
     }

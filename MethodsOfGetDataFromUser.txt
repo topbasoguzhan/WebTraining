@@ -5,3 +5,5 @@ Kullanýcýnýn veri girebileceði sayfayý Html'in bize saðladýðý form üzerinde tasa
 ---Query String---
 -Güvenlik gerektirmeyen bilgilerin Url üzerinde taþýnmasý için kullanýlan yapýlanmadýr.
 -Yapýlan requestin türü her ne olursa olsun query string deðerleri taþýnabilir.
+---Route Parameter---
+-Bir nebze olsun daha güvenli bir þekilde veri taþýnabiliyor Query Stringe göre. Taþýma þekilleri neredeyse birebir.
