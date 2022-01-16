@@ -17,3 +17,5 @@ Kullanýcýnýn veri girebileceði sayfayý Html'in bize saðladýðý form üzerinde tasa
 
 ---Ajax Tabanlý Veri Alma---
 -Ajax,client tabanlý istek yapmamýzý saðlayan ve sonuçlarýný almamýzý saðlayan bir JavaScript temelli mimaridir.
+
+---Kullanýcýdan Gelen Verilerin Doðrulanmasý Validations---

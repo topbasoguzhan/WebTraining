@@ -11,23 +11,6 @@ namespace SampleProject.Controllers
     #region [NonController]
     //Böyle yaparsak bütün controller'ı sadece iş mantığında kullanmış olacağız. İşlevselliğini kaybedip normal bir sınıf gibi olacak ve request alamayacaktır.
     #endregion
-
-    public class QueryData
-    {
-        public int A { get; set; }
-        public string B { get; set; }
-    }
-    public class RouteData
-    {
-        public int A { get; set; }
-        public string B { get; set; }
-        public string Id { get; set; }
-    }
-    public class AjaxData
-    {
-        public string A { get; set; }
-        public string B { get; set; }
-    }
     public class ProductController : Controller
     {
 
@@ -35,16 +18,16 @@ namespace SampleProject.Controllers
         {
             return View();
         }
-        
         public IActionResult CreateProduct()
+        {
+            var tuple = (new Product(), new User());
+            return View(tuple); //bunu yaparak tuple nesnemizin null olmamasını sağladık. Bunu da post ettiğimiz Action'ın Get'ine yapmamız gerekiyor.
+        }
+        [HttpPost]
+        public IActionResult CreateProduct([Bind(Prefix = "Item1")]Product product, [Bind(Prefix = "Item2")] User user) //Prefix kullanmadan tuple nesneyi yakalayamadık.
         {
             return View();
         }      
-       [HttpPost]
-        public IActionResult VeriAl(AjaxData ajaxData)
-        {
-            return View();
-        }
     }
 }
 
@@ -194,4 +177,17 @@ public IActionResult VeriAl()
 //    var headers = Request.Headers.ToList();
 //    return View();
 //}
+#endregion
+#region Get Data with Ajax
+//public class AjaxData
+//{
+//    public string A { get; set; }
+//    public string B { get; set; }
+//}
+//[HttpPost]
+//public IActionResult VeriAl(AjaxData ajaxData)
+//{
+//    return View();
+//}
+
 #endregion
