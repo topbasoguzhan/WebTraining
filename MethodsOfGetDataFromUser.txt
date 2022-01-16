@@ -7,3 +7,7 @@ Kullanýcýnýn veri girebileceði sayfayý Html'in bize saðladýðý form üzerinde tasa
 -Yapýlan requestin türü her ne olursa olsun query string deðerleri taþýnabilir.
 ---Route Parameter---
 -Bir nebze olsun daha güvenli bir þekilde veri taþýnabiliyor Query Stringe göre. Taþýma þekilleri neredeyse birebir.
+---Header Paramete---
+-Headerler genellikle ilgili istekle alakalý nitelikleri barýndýrýr.
+-Ýsimlendirmede sadece Latince karakterler kullanýlmalýdýr.
+-Ýstekleri tarayýcý üzerinden diðerlerinde olduðu gibi izleyemiyoruz. Postman kullanýlabilir bunlarý izlemek ve istek atmak için çalýþma sýrasýnda.

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SampleProject.Models;
 using SampleProject.Models.ViewModels;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json;
 
 namespace SampleProject.Controllers
@@ -34,12 +35,9 @@ namespace SampleProject.Controllers
         {
             return View();
         }
-
-        //public IActionResult VeriAl(string id, string a, string b)
-        public IActionResult VeriAl(RouteData datas)
-
+        public IActionResult VeriAl()
         {
-            var values = Request.RouteValues; //rota değerlerini göbilmek için yazdık.
+            var headers = Request.Headers.ToList();
             return View();
         }
     }
@@ -175,4 +173,13 @@ public IActionResult VeriAl()
     var b = Request.Query["b"].ToString();
     return View();
 }*/
+#endregion
+#region Get Data with Route
+//public IActionResult VeriAl(string id, string a, string b)
+//public IActionResult VeriAl(RouteData datas)
+
+//{
+//    var values = Request.RouteValues; //rota değerlerini göbilmek için yazdık.
+//    return View();
+//}
 #endregion
