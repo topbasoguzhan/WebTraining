@@ -19,3 +19,6 @@ Kullanýcýnýn veri girebileceði sayfayý Html'in bize saðladýðý form üzerinde tasa
 -Ajax,client tabanlý istek yapmamýzý saðlayan ve sonuçlarýný almamýzý saðlayan bir JavaScript temelli mimaridir.
 
 ---Kullanýcýdan Gelen Verilerin Doðrulanmasý Validations---
+-Validation: Bir deðerin içinde bulunduðu þartlara uygun olmasý durumudur. Belirlenen koþullara ve amaca uygun olup olmama durumunun kontrol edilmesidir. Bu kontrole göre verinin iþleme tabi tutulmasý durumudur.
+-Yapýlan validation server tarafýnda gerçeklþeiyorsa biz buna server side validation deriz.
+-Client tarafýnda da validation yapýlýr. Asýl orda yapýlýrsa doðruluðu yüksek olur zaten. Ýki tarafta da yapýlmasý zorunludur diyebiliriz doðruluk açýsýndan.Validation paralel bir þekilde client ve server taraflarýnda uygulanmalýdýr.

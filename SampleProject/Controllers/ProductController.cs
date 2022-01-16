@@ -20,12 +20,37 @@ namespace SampleProject.Controllers
         }
         public IActionResult CreateProduct()
         {
-            var tuple = (new Product(), new User());
-            return View(tuple); //bunu yaparak tuple nesnemizin null olmamasını sağladık. Bunu da post ettiğimiz Action'ın Get'ine yapmamız gerekiyor.
+            return View();
         }
         [HttpPost]
-        public IActionResult CreateProduct([Bind(Prefix = "Item1")]Product product, [Bind(Prefix = "Item2")] User user) //Prefix kullanmadan tuple nesneyi yakalayamadık.
+        public IActionResult CreateProduct(Product model)
         {
+            //ModelState: MVC'de bir type'ın data annotationlarını kontrol eden ve geriye sonuç dönen bir property.
+            if (!ModelState.IsValid)
+            {
+                //Loglama
+                //Kullanıcı bilgilendirme
+                //ViewBag.HataMesaj = ModelState.Values.FirstOrDefault(x => x.ValidationState == Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState.Invalid).Errors[0].ErrorMessage;//Bu şekilde modelstate'de hangisinin hata verdiğini alabiliyoruz.Ama bu kadar uzun yazmaya gerek tabiki de yok. Aşağıda tanımladığımız var messages  satırı ile view'da yaptığımız span işlemiyle birlikte hataları bize kolay bir şekilde geri döndürebiliyoruz.
+
+                var messages = ModelState.ToList();
+
+                return View(model);
+            }
+            //İşlem/Operasyon/Algoritmaya tabi tutulur.
+            #region SecondWay
+            //if (ModelState.IsValid) //yukardaki yazdığımı kontrol böyle de yazılabilir
+            //{
+            //İşlem/Operasyon/Algoritmaya tabi tutulur.
+
+
+            //}
+            //else
+            //{
+
+            //}
+            #endregion
+            //if(!string.IsNullOrEmpty(model.ProductName) && model.ProductName.Length <= 100 && model.Email) doğrulamayı böyle koşul yöntemiyle yapmak hiç doğru olmayacak ve maliyetli olacaktır.
+
             return View();
         }      
     }
@@ -190,4 +215,16 @@ public IActionResult VeriAl()
 //    return View();
 //}
 
+#endregion
+#region Tuple Object
+//public IActionResult CreateProduct()
+//{
+//    var tuple = (new Product(), new User());
+//    return View(tuple); //bunu yaparak tuple nesnemizin null olmamasını sağladık. Bunu da post ettiğimiz Action'ın Get'ine yapmamız gerekiyor.
+//}
+//[HttpPost]
+//public IActionResult CreateProduct([Bind(Prefix = "Item1")] Product product, [Bind(Prefix = "Item2")] User user) //Prefix kullanmadan tuple nesneyi yakalayamadık.
+//{
+//    return View();
+//}
 #endregion
