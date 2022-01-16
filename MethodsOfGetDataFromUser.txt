@@ -2,12 +2,18 @@ ____KULLANICIDAN VERÝ ALMA YÖNTEMLERÝ____
 
 ---Form Üzerinden Veri Alma---
 Kullanýcýnýn veri girebileceði sayfayý Html'in bize saðladýðý form üzerinde tasarlarýz. Post ve Get olarak iki türlü þekilde veri alabiliyoruz.
+
 ---Query String---
 -Güvenlik gerektirmeyen bilgilerin Url üzerinde taþýnmasý için kullanýlan yapýlanmadýr.
 -Yapýlan requestin türü her ne olursa olsun query string deðerleri taþýnabilir.
+
 ---Route Parameter---
 -Bir nebze olsun daha güvenli bir þekilde veri taþýnabiliyor Query Stringe göre. Taþýma þekilleri neredeyse birebir.
----Header Paramete---
+
+---Header Parameter---
 -Headerler genellikle ilgili istekle alakalý nitelikleri barýndýrýr.
 -Ýsimlendirmede sadece Latince karakterler kullanýlmalýdýr.
 -Ýstekleri tarayýcý üzerinden diðerlerinde olduðu gibi izleyemiyoruz. Postman kullanýlabilir bunlarý izlemek ve istek atmak için çalýþma sýrasýnda.
+
+---Ajax Tabanlý Veri Alma---
+-Ajax,client tabanlý istek yapmamýzý saðlayan ve sonuçlarýný almamýzý saðlayan bir JavaScript temelli mimaridir.

@@ -23,6 +23,11 @@ namespace SampleProject.Controllers
         public string B { get; set; }
         public string Id { get; set; }
     }
+    public class AjaxData
+    {
+        public string A { get; set; }
+        public string B { get; set; }
+    }
     public class ProductController : Controller
     {
 
@@ -34,10 +39,10 @@ namespace SampleProject.Controllers
         public IActionResult CreateProduct()
         {
             return View();
-        }
-        public IActionResult VeriAl()
+        }      
+       [HttpPost]
+        public IActionResult VeriAl(AjaxData ajaxData)
         {
-            var headers = Request.Headers.ToList();
             return View();
         }
     }
@@ -180,6 +185,13 @@ public IActionResult VeriAl()
 
 //{
 //    var values = Request.RouteValues; //rota değerlerini göbilmek için yazdık.
+//    return View();
+//}
+#endregion
+#region Get Data with Header
+//public IActionResult VeriAl()
+//{
+//    var headers = Request.Headers.ToList();
 //    return View();
 //}
 #endregion

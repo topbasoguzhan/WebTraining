@@ -1,18 +1,5 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-@model SampleProject.Models.Product
-
-<form asp-action ="VeriAl" asp-controller ="Product" method="post">
-    <input asp-for="ProductName" type ="text"/> <br />
-    <input asp-for="Quantity" type ="text"/> <br />
-    <button>Gönder</button>    
-</form>
-
-<a asp-action ="Index" asp-controller="Home" asp-route-a="Ahmet" asp-route-b="Mehmet" asp-route-id="123" asp-route-x="awkdnalwkçd">content</a>
-{controller=Home}/{action=Index}/{a}/{b}/{id}
-
-
-
 
 
 
@@ -41,6 +28,24 @@ Bir web uygulamasında form tetiklendiğinde içindeki inputların değerleri he
 Post olarak gönderilir burada mesela
 Form içerisindeki input nesneleri post edildiğinde ,bu nesnelere karşılık gelen propertyleri barından
 bir nesneyle otomatik olarak bind edilirler.*@
+@*Get data with Router view*@@*@model SampleProject.Models.Product
 
+<form asp-action ="VeriAl" asp-controller ="Product" method="post">
+    <input asp-for="ProductName" type ="text"/> <br />
+    <input asp-for="Quantity" type ="text"/> <br />
+    <button>Gönder</button>    
+</form>
 
+<a asp-action ="Index" asp-controller="Home" asp-route-a="Ahmet" asp-route-b="Mehmet" asp-route-id="123" asp-route-x="awkdnalwkçd">content</a>
+{controller=Home}/{action=Index}/{a}/{b}/{id}
+*@
+@*Get data with Ajax view*@@*<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<button id="btnGonder">Gönder</button>
+
+<script>
+    $("#btnGonder").click(() => {
+        $.post("https://localhost:5001/product/verial", { a: "a data", b : "b data"});
+    });
+</script>*@
 
