@@ -181,7 +181,7 @@ public IActionResult VeriAl(IFormCollection datas)
 /*public IActionResult VeriAl(string a, string b)
 public IActionResult VeriAl()
 {
-    var queryString = Request.QueryString; //Request yapılan enpoint'e query string parametresi eklemeli mi eklenmemeli mi bununla ilgili bilgi verir.
+    var queryString = Request.QueryString; //Request yapılan endpoint'e query string parametresi eklemeli mi eklenmemeli mi bununla ilgili bilgi verir.
     var a = Request.Query["a"].ToString();
     var b = Request.Query["b"].ToString();
     return View();
@@ -192,7 +192,7 @@ public IActionResult VeriAl()
 //public IActionResult VeriAl(RouteData datas)
 
 //{
-//    var values = Request.RouteValues; //rota değerlerini göbilmek için yazdık.
+//    var values = Request.RouteValues; //rota değerlerini görebilmek için yazdık.
 //    return View();
 //}
 #endregion

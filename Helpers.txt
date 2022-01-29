@@ -18,7 +18,7 @@ Content Metodu: Genellikle CSS ve Script gibi dosya dizinlerini programatik olar
 Örn: Url.Content("~/site.css")
 Sonuc: /site.css
 
-RotureUrl Metodu: Mimaride tanýmlý olan Route isimlerine uygun bir þekilde url oluþturan bir metottur.
+RouteUrl Metodu: Mimaride tanýmlý olan Route isimlerine uygun bir þekilde url oluþturan bir metottur.
 Örn: Url.RouteUrl("Default")
 Sonuc: /Product/GetProducts
 

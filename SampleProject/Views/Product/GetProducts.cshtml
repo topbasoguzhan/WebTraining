@@ -5,7 +5,8 @@
 <br />
 <email a="abc" mail="manifestationoffate@gmail.com" display="Oğuzhan Topbaş Mail'i"></email>
 
-@*TagHelpers*@@*<cache>
+@*TagHelpers*@
+@*<cache>
     Cache : @DateTime.Now *CacheTagHelper
 </cache>
 <br />
@@ -20,7 +21,8 @@
 
 
 </form> *FormTaghelper ile*@
-@*uygulama*@@* @model SampleProject.Models.ViewModels.UserProduct
+@*uygulama*@
+@* @model SampleProject.Models.ViewModels.UserProduct
 
 <h3>@Model.Product.ProductName</h3>
 <h3>@Model.User.Name</h3> *@
@@ -37,7 +39,9 @@
 
 @Html.Partial("~/Views/Product/Partials/ListPartial.cshtml",new SampleProject.Models.Product())*@
 @*Gönderdiğimiz user'ı burada kullanabiliriz ve sondaki model'i bildirmeden partial'da da kullanabiliriz. Devamı orada(ListPartial) *@
-@*HtmlHelper deneme*@@*@Html.TextBox("txtAdi", null, new { style="background-color:green; color:white" })
+@*HtmlHelper deneme*@
+
+@*@Html.TextBox("txtAdi", null, new { style="background-color:green; color:white" })
 
 @Html.CustomTextBox("txtCustomAdi",null,"Adınız")*@
 
