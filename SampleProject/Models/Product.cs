@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SampleProject.Models
 {
-    [ModelMetadataType(typeof(ProductMetadata))] //Validation'ı burada yaptığımızı belirtmiş olduk.
+    //[ModelMetadataType(typeof(ProductMetadata))] Validation'ı burada yaptığımızı belirtmiş olduk.
     public class Product
     {
         public string ProductName { get; set; }
