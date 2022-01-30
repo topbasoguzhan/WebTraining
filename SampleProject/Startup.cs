@@ -24,7 +24,7 @@ namespace SampleProject
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStaticFiles();
             app.UseRouting(); //Gelen isteðin rotasý bu middleware sayesinde belirleniyor.
 
             app.UseEndpoints(endpoints =>
