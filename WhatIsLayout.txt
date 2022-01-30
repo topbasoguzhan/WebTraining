@@ -1,0 +1,7 @@
+Web sayfalarýnýn olmazsa olmazýdýr. Sayfadan sayfaya gezinirken kullanýcýya tutarlý bir deneyim saðlayan ortak sayfa taslaðýdýr.
+Tutarlý bir düzene sahip bir web sitesi oluþturmak için kullanýlýr.
+Layout dosyasý özünde bir .cshtml dosyasýdýr. 
+Asp.NET Core MVC uygulamalarýnda Layout dosyasý Views klasörü altýndaki Shared klasörü altýnda "_Layout.cshtml" isminde oluþturulur. Bu durum genellikle böyledir.
+RenderBody(): Layout üzerinde o an render edilen View'in result'unu nereye basýlacaðýný ifade eden fonksiyondur. Bir _Layout dosyasýnýn içinde sadece bir tane tanýmlayabiliriz ve mutlaka o da olmalýdýr.
+RenderSection(): Layout içerisinde isimsel bölümler oluþturmamýzý saðlar. Ýhtiyaç doðrultusunda bu bölümlere render edilen view'lerden de içerikler atanabilir.
+Yalnýz RenderSection tanýmlarken bunu view'de tüketmeliyiz. Section fonksiyonuyla render edeceðimiz kýsmý tanýmlamalýyýz.
