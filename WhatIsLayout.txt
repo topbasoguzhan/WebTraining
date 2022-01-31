@@ -1,3 +1,6 @@
+---------LAYOUT----------
+
+---RenderBody ve RenderSection---
 Web sayfalarýnýn olmazsa olmazýdýr. Sayfadan sayfaya gezinirken kullanýcýya tutarlý bir deneyim saðlayan ortak sayfa taslaðýdýr.
 Tutarlý bir düzene sahip bir web sitesi oluþturmak için kullanýlýr.
 Layout dosyasý özünde bir .cshtml dosyasýdýr. 
@@ -5,3 +8,13 @@ Asp.NET Core MVC uygulamalarýnda Layout dosyasý Views klasörü altýndaki Shared k
 RenderBody(): Layout üzerinde o an render edilen View'in result'unu nereye basýlacaðýný ifade eden fonksiyondur. Bir _Layout dosyasýnýn içinde sadece bir tane tanýmlayabiliriz ve mutlaka o da olmalýdýr.
 RenderSection(): Layout içerisinde isimsel bölümler oluþturmamýzý saðlar. Ýhtiyaç doðrultusunda bu bölümlere render edilen view'lerden de içerikler atanabilir.
 Yalnýz RenderSection tanýmlarken bunu view'de tüketmeliyiz. Section fonksiyonuyla render edeceðimiz kýsmý tanýmlamalýyýz.
+
+-- _ViewStart --
+Asýl amacý tüm view'lerde kullanýlmasý yapýlmasý/gereken ortak çalýþmalarýn yapýldýðý view'dir. Bir nevi tüm view'lerin atasýdýr. Herhangi bir view render edilirken önce sahipsek _ViewStart render edilir.
+Views klasörü altýnda _ViewStart.cshtml olarak oluþturulmasý gerekir.
+Genellikle tüm view'lerin ortak kullanacaðý Layout tanýmlamasý bu dosya içerisinde gerçekleþtirilir.
+Layout tanýmlamasýný _ViewStart'da yaptýktan sonra diðer viewlerde bunu yapmamýza gerek kalmýyor.
+-- _ViewImports --
+Razor sayfalarý için kütüphane ve namespace tanýmlamalarýný sayfa sayfa farklý tanýmlamaktansa ortak/merkezi olarak tanýmlamamýzý saðlayan bir dosyadýr.
+Views klasörü altýnda _ViewImports.cshtml isminde oluþturulmalýdýr.
+
