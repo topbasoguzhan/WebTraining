@@ -1,0 +1,13 @@
+----------Modüler Tasarým Yapýlanmasý----------
+
+Bir sorunla karþýlaþtýðýmýzda daha kolay çözmemizi veya bir deðiþiklik yapmak istediðimizde projemizde bize daha esneklik saðlayan design türüdür.
+PartialView: Modüler tasarým yapýlanmasýnda her bir modülü ayrý bir view olarak tasarlamamýzý saðlayan ve bunlarý parça view olarak ana viewde birleþtirmemizi saðlayan bir tekniktir desek yeridir. PartialView'ler içerisinden Layout içerisindeki herhangi bir RenderSection yapýlanmasýna ulaþmamýz mümkün deðildir.
+
+--ViewComponent--
+Modüler tasarým yapýlanmasýný oluþturmamýzý ve kullanmamýzý saðlayan, .NET Core ile gelen bir yapýlanmadýr.
+PartialView ile ayný amaca hizmet ederler ama aralarýnda teknik olarak farklar vardýr.
+PartialView'in tükettiði bir data varsa bu datanýn kesinlikle Controller'dan gelmesi gerekiyor. PartialView yapýsal olarak Controller'dan beslenmektedir. ViewComponent, Controller'ý bu yükten kurtarýyor. SOLID prennsiplerinden single-responsibility-principle gereði controller mesela 50 tane partialview'in datasýný çekmekle görevlendirilemez. ViewComponent tetiklendiðinde gereken datayý controller üzerinden deðil, kendi cs. dosyasýndan elde edebilmektedir. Böylece controller üzerindeki lüzumsuz maliyeti ortadan kaldýrýr. Ve de kesin olmamakla birlikte PartialView'lere göre ViewComponent'larýn render edilme süreci daha hýzlý.
+ViewComponent iki yapýlanmadan oluþuyor. Bir tarafý .cshtml dosyasýyken bir tarafý .cs þeklinde. .cs tarafýnda programatik iþlemler gerçekleþirken .cshtml tarafýnda daha çok view iþlemleri gerçekleþmektedir. Ýlk önce .cs kýsmýný sonrasýnda .cshtml kýsmýný inþa etmeliyiz.
+Tasarlana viewcomponent çaðýrýlýp render edildiðinde içerisinde çalýþmasýný istediðimiz kodlarý 'public class IViewComponentResult Invoke()' imzasýnda bir metodun içerisine yerleþtirmeliyiz. Invoke asenkron da(InvokeAsync) olabilir.
+ViewComponent Controller gibi çalýþamamakta,sadece Get fonksiyonlarýný yerine getirebilmektedir. Herhangi bir request(istek)'i ViewComponent sýnýflarýnda karþýlayamýyoruz. Ýstekleri sadece Controler'lardaki Actionlarda karþýlayabiliyoruz.
+[NonViewComponent] attribute'u ile ViewComponent olarak oluþturduðumuz bir sýnýfý ViewComponent olarak kullanmaktan çýkarabiliyoruz.

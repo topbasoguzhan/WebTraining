@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TheoreticalKnowledge", "The
 		ActionTypes.cs = ActionTypes.cs
 		Helpers.txt = Helpers.txt
 		MethodsOfGetDataFromUser.txt = MethodsOfGetDataFromUser.txt
+		ModularDesign.txt = ModularDesign.txt
 		MVC.cs = MVC.cs
 		Notes.cs = Notes.cs
 		WhatIsLayout.txt = WhatIsLayout.txt
